@@ -43,6 +43,7 @@ public class DownloadManagerPlugin extends CordovaPlugin {
       if (action.equals("query")) return query(args.getJSONObject(0), callbackContext);
       if (action.equals("remove")) return remove(args, callbackContext);
 
+      callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
       return false;
     }
 
