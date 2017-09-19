@@ -1,6 +1,6 @@
 # `cordova-plugin-android-downloadmanager`
 
-[![Build Status](https://travis-ci.org/emilbayescordova-plugin-android-downloadmanager/.svg?branch=master)](https://travis-ci.org/emilbayescordova-plugin-android-downloadmanager/)
+[![Build Status](https://travis-ci.org/emilbayes/cordova-plugin-android-downloadmanager.svg?branch=master)](https://travis-ci.org/emilbayes/cordova-plugin-android-downloadmanager)
 
 > Plugin to expose Android's DownloadManager in Javascript
 
