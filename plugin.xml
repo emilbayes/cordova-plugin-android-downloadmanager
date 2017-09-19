@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-android-downloadmanager" version="0.0.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-android-downloadmanager" version="0.2.0">
   <name>cordova-plugin-android-downloadmanager</name>
-  <description>Cordova plugin for interacting with DownloadManager</description>
+  <description>Plugin to expose Android's DownloadManager in Javascript</description>
   <author email="github@tixz.dk">Emil Bay</author>
-  <keywords>cordova,android,cosu,single-use,pin,lock,kiosk,mode</keywords>
+  <keywords>cordova,android</keywords>
   <license>ISC</license>
   <repo>git+https://github.com/emilbayes/cordova-plugin-android-downloadmanager.git</repo>
   <issue>https://github.com/emilbayes/cordova-plugin-android-downloadmanager/issues</issue>
@@ -11,11 +11,11 @@
      <runs/>
   </js-module>
   <platform name="android">
-    <source-file src="src/com/github/emilbayes/downloadmanager/DownloadManagerPlugin.java" target-dir="src/com/github/emilbayes/downloadmanager" />
+    <source-file src="src/com/github/emilbayes/downloadmanager/DownloadManagerPlugin.java" target-dir="src/com/github/emilbayes/downloadmanager"/>
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="DownloadManagerPlugin">
-        <param name="android-package" value="com.github.emilbayes.downloadmanager.DownloadManagerPlugin" />
-        <param name="onload" value="true" />
+        <param name="android-package" value="com.github.emilbayes.downloadmanager.DownloadManagerPlugin"/>
+        <param name="onload" value="true"/>
       </feature>
     </config-file>
   </platform>
