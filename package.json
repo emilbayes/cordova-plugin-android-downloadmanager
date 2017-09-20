@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-android-downloadmanager",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Plugin to expose Android's DownloadManager in Javascript",
   "main": "www/index.js",
   "dependencies": {
