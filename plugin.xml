@@ -7,9 +7,6 @@
   <license>ISC</license>
   <repo>git+https://github.com/emilbayes/cordova-plugin-android-downloadmanager.git</repo>
   <issue>https://github.com/emilbayes/cordova-plugin-android-downloadmanager/issues</issue>
-  <js-module src="www/index.js" name="DownloadManager">
-     <runs/>
-  </js-module>
   <platform name="android">
     <source-file src="src/com/github/emilbayes/downloadmanager/DownloadManagerPlugin.java" target-dir="src/com/github/emilbayes/downloadmanager"/>
     <config-file target="res/xml/config.xml" parent="/*">

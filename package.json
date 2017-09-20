@@ -7,10 +7,10 @@
     "nanoassert": "^1.1.0"
   },
   "devDependencies": {
-    "sync-cordova-xml": "^0.2.1"
+    "sync-cordova-xml": "^0.3.0"
   },
   "scripts": {
-    "version": "sync-cordova-xml --plugin package.json plugin.xml --output plugin.xml && git add plugin.xml"
+    "version": "sync-cordova-xml package.json plugin.xml --output plugin.xml && git add plugin.xml"
   },
   "cordova": {
     "id": "cordova-plugin-android-downloadmanager",
