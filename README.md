@@ -44,12 +44,32 @@ for parameter use.
 
 ### `downloadManager.query([filter], cb)`
 
-`cb(err, downloadsArray)`
+You can query the SQLite database that backs DownloadManager, but the native Android `query` method only supports two filters:
 
 ```
 {
   ids: ["1"],
   status: 0
+}
+```
+
+This will invoke the callback of the signature `cb(err, entryArray)` with each `entry` being objects of the form:
+
+```js
+{
+  "id": String,
+  "title": String,
+  "description": String,
+  "mediaType": String,
+  "localFilename": String,
+  "localUri": String,
+  "mediaproviderUri": String,
+  "uri": String,
+  "lastModifiedTimestamp": Number,
+  "status": Number,
+  "reason": Number,
+  "bytesDownloadedSoFar": Number,
+  "totalSizeBytes": Number
 }
 ```
 
