@@ -64,6 +64,8 @@ public class DownloadManagerPlugin extends CordovaPlugin {
 
         callbackContext.success(JSONFromCursor(downloads));
 
+        downloads.close();
+
         return true;
     }
 
@@ -151,8 +153,6 @@ public class DownloadManagerPlugin extends CordovaPlugin {
             rowObject.put("totalSizeBytes", cursor.getLong(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES)));
             result.put(rowObject);
         } while (cursor.moveToNext());
-
-        cursor.close();
 
         return result;
     }
