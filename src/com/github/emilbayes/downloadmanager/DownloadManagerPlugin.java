@@ -152,7 +152,7 @@ public class DownloadManagerPlugin extends CordovaPlugin {
             result.put(rowObject);
         } while (cursor.moveToNext());
 
-        cusor.close();
+        cursor.close();
 
         return result;
     }
