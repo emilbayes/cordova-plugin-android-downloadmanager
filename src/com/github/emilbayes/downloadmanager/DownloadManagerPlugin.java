@@ -19,12 +19,6 @@ import android.app.DownloadManager;
 import java.util.HashMap;
 import java.util.Map;
 
-import static android.app.DownloadManager.STATUS_FAILED;
-import static android.app.DownloadManager.STATUS_PAUSED;
-import static android.app.DownloadManager.STATUS_PENDING;
-import static android.app.DownloadManager.STATUS_RUNNING;
-import static android.app.DownloadManager.STATUS_SUCCESSFUL;
-
 public class DownloadManagerPlugin extends CordovaPlugin {
     DownloadManager downloadManager;
 
@@ -113,7 +107,9 @@ public class DownloadManagerPlugin extends CordovaPlugin {
         long[] ids = longsFromJSON(obj.optJSONArray("ids"));
         query.setFilterById(ids);
 
-        query.setFilterByStatus(obj.optInt("status", STATUS_FAILED | STATUS_PAUSED | STATUS_PENDING | STATUS_RUNNING | STATUS_SUCCESSFUL));
+        if (obj.has("status")) {
+            query.setFilterByStatus(obj.getInt("status"));
+        }
 
         return query;
     }
