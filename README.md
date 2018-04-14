@@ -38,7 +38,8 @@ for parameter use.
     dirType: '',
     subPath: ''
   },
-  destinationUri: ''
+  destinationUri: '',
+  headers: [{header: 'Authorization', value: 'Bearer iaksjfd89aklfdlkasdjf'}]
 }
 ```
 

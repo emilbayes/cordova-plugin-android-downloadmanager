@@ -97,6 +97,14 @@ public class DownloadManagerPlugin extends CordovaPlugin {
 
         req.setVisibleInDownloadsUi(obj.optBoolean("visibleInDownloadsUi", true));
         req.setNotificationVisibility(obj.optInt("notificationVisibility"));
+				
+        if (obj.has("headers")) {
+          JSONArray arrHeaders = obj.optJSONArray("headers");
+          for (int i = 0; i < arrHeaders.length(); i++) {
+            JSONObject headerObj = arrHeaders.getJSONObject(i);
+            req.addRequestHeader(headerObj.optString("header"), headerObj.optString("value"));
+          }
+        }
 
         return req;
     }
