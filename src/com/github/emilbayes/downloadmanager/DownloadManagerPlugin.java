@@ -38,7 +38,7 @@ Log.i("MyClaim","action = "+action);
       if (action.equals("enqueue")) return enqueue(args.getJSONObject(0), callbackContext);
       if (action.equals("query")) return query(args.getJSONObject(0), callbackContext);
       if (action.equals("remove")) return remove(args, callbackContext);
-      if (action.equals("addCompletedDownload")) return remove(args, callbackContext);
+      if (action.equals("addCompletedDownload")) return addCompletedDownload(args.getJSONObject(0), callbackContext);
 
       callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
       return false;
