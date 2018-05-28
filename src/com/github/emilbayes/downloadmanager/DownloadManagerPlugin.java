@@ -72,6 +72,22 @@ public class DownloadManagerPlugin extends CordovaPlugin {
         return true;
     }
 
+    protected boolean addCompletedDownload(JSONObject req, CallbackContext callbackContext) throws JSONException {
+	    
+        long id = downloadManager.addCompletedDownload(
+            req.optString("title"),
+            req.optString("description"),
+            req.optBoolean("isMediaScannerScannable"),
+            req.optString("mimeType"),
+            req.optString("path"),
+            req.optLong("length"),
+            req.optBoolean("showNotification"));
+
+	callbackContext.success(Long.toString(id));
+
+        return true;
+    }
+	
     protected DownloadManager.Request deserialiseRequest(JSONObject obj) throws JSONException {
         DownloadManager.Request req = new DownloadManager.Request(Uri.parse(obj.getString("uri")));
 
