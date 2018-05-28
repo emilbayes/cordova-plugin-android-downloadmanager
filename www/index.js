@@ -48,7 +48,7 @@ DownloadManager.prototype.remove = function(ids, cb) {
 }
 
 DownloadManager.prototype.addCompletedDownload = function(req, cb) {
-  exec('addCompletedDownload', req, cb)
+  exec('addCompletedDownload', [req], cb)
 }
 
 function exec (method, args, cb) {
