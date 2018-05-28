@@ -73,16 +73,18 @@ public class DownloadManagerPlugin extends CordovaPlugin {
         return true;
     }
 
-    protected boolean addCompletedDownload(JSONObject req, CallbackContext callbackContext) throws JSONException {
+    protected boolean addCompletedDownload(JSONObject obj, CallbackContext callbackContext) throws JSONException {
 	    
         long id = downloadManager.addCompletedDownload(
-            req.optString("title"),
-            req.optString("description"),
-            req.optBoolean("isMediaScannerScannable"),
-            req.optString("mimeType"),
-            req.optString("path"),
-            req.optLong("length"),
-            req.optBoolean("showNotification"));
+            obj.optString("title"),
+            obj.optString("description"),
+            obj.optBoolean("isMediaScannerScannable",false),
+            obj.optString("mimeType"),
+            obj.optString("path"),
+            obj.optLong("length"),
+            obj.optBoolean("showNotification",true));
+	// NOTE: If showNotification is false, you need
+	// <uses-permission android: name = "android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
 
 	callbackContext.success(Long.toString(id));
 
