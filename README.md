@@ -78,7 +78,22 @@ This will invoke the callback of the signature `cb(err, entryArray)` with each `
 
 `ids` should be an array of string id's. `cb(err, removedCount)`
 
+### `downloadManager.addCompletedDownload(req, [cb])`
 
+`cb(err, idString)`
+
+```
+{
+  title: '',
+  description: '',
+  isMediaScannerScannable: false,
+  mimeType: '',
+  path: '',
+  length: 0,
+  showNotification: true
+}
+```
+Note: Don't include any `file://` prefix in the path.
 
 ## Install
 
