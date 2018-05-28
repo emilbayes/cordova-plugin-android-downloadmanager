@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.pm.LauncherApps;
 import android.database.Cursor;
 import android.net.Uri;
-import android.util.Log;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -34,7 +33,6 @@ public class DownloadManagerPlugin extends CordovaPlugin {
     }
 
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-Log.i("MyClaim","action = "+action);
       if (action.equals("enqueue")) return enqueue(args.getJSONObject(0), callbackContext);
       if (action.equals("query")) return query(args.getJSONObject(0), callbackContext);
       if (action.equals("remove")) return remove(args, callbackContext);
@@ -76,8 +74,6 @@ Log.i("MyClaim","action = "+action);
     }
 
     protected boolean addCompletedDownload(JSONObject req, CallbackContext callbackContext) throws JSONException {
-Log.i("MyClaim","In addCompletedDownload");
-Log.i("MyClaim","title = " + req.optString("title"));
 	    
         long id = downloadManager.addCompletedDownload(
             req.optString("title"),
