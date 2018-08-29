@@ -13,7 +13,7 @@ var downloadManager = require('cordova-plugin-android-downloadmanager.DownloadMa
 -- OR --
 
 ```js
-var downloadManager = cordova.plugins.DownloadManagerPlugin
+var downloadManager = cordova.plugins.DownloadManager
 ```
 
 ## API
