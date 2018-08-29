@@ -8,7 +8,7 @@
   <repo>git+https://github.com/emilbayes/cordova-plugin-android-downloadmanager.git</repo>
   <issue>https://github.com/emilbayes/cordova-plugin-android-downloadmanager/issues</issue>
   <platform name="android">
-    <js-module src="www/index.js" name="DownloadManagerPlugin">
+    <js-module src="www/index.js" name="DownloadManager">
       <clobbers target="cordova.plugins.DownloadManager" />
     </js-module>
     <source-file src="src/com/github/emilbayes/downloadmanager/DownloadManagerPlugin.java" target-dir="src/com/github/emilbayes/downloadmanager"/>
