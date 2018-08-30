@@ -47,6 +47,10 @@ DownloadManager.prototype.remove = function(ids, cb) {
   exec('remove', ids, cb)
 }
 
+DownloadManager.prototype.addCompletedDownload = function(req, cb) {
+  exec('addCompletedDownload', [req], cb)
+}
+
 function exec (method, args, cb) {
   if (cb == null) cb = noop
   cordova.exec(onsuccess, onerror, 'DownloadManagerPlugin', method, args || [])
