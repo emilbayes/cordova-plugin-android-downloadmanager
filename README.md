@@ -10,6 +10,12 @@
 var downloadManager = require('cordova-plugin-android-downloadmanager.DownloadManager')
 ```
 
+-- OR --
+
+```js
+var downloadManager = cordova.plugins.DownloadManager
+```
+
 ## API
 
 Please refer to [`DownloadManager`](https://developer.android.com/reference/android/app/DownloadManager.html)
@@ -100,6 +106,13 @@ Note: Don't include any `file://` prefix in the path.
 ```sh
 npm install cordova-plugin-android-downloadmanager
 ```
+
+-- OR --
+
+```sh
+cordova plugin add --save cordova-plugin-android-downloadmanager
+```
+
 
 ## License
 

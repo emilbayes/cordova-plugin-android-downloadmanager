@@ -1,11 +1,14 @@
-var assert = require('nanoassert')
 module.exports = new DownloadManager()
 
-function DownloadManager () {
+function DownloadManager() {
 }
 
-DownloadManager.prototype.enqueue = function(req, cb) {
-  if (typeof req === 'string') req = {uri: req}
+function assert(assertion, message) {
+  if (!assertion) throw new Error(message || 'AssertionError')
+}
+
+DownloadManager.prototype.enqueue = function (req, cb) {
+  if (typeof req === 'string') req = { uri: req }
   if (req.url) req.uri = req.url
 
   assert(typeof req.uri === 'string', 'req.uri must be string')
@@ -27,7 +30,7 @@ DownloadManager.prototype.enqueue = function(req, cb) {
   exec('enqueue', [req], cb)
 }
 
-DownloadManager.prototype.query = function(filter, cb) {
+DownloadManager.prototype.query = function (filter, cb) {
   if (typeof filter === 'function') {
     cb = filter
     filter = null
@@ -40,7 +43,7 @@ DownloadManager.prototype.query = function(filter, cb) {
   exec('query', [filter], cb)
 }
 
-DownloadManager.prototype.remove = function(ids, cb) {
+DownloadManager.prototype.remove = function (ids, cb) {
   assert(Array.isArray(ids), 'ids must be array')
   assert(cb == null ? true : typeof cb === 'function', 'cb must be function')
 
@@ -55,16 +58,16 @@ function exec (method, args, cb) {
   if (cb == null) cb = noop
   cordova.exec(onsuccess, onerror, 'DownloadManagerPlugin', method, args || [])
 
-  function onsuccess () {
+  function onsuccess() {
     var args = Array.prototype.slice.call(arguments)
     args.unshift(null)
     cb.apply(null, args)
   }
 
-  function onerror (err) {
+  function onerror(err) {
     err = (err instanceof Error) ? err : new Error(err)
     cb(err)
   }
 }
 
-function noop () {}
+function noop() { }
